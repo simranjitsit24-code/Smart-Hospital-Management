@@ -1,3 +1,6 @@
+import Transfer from '../models/transfer.js';
+import Patient from '../models/Patient.js';
+import Room from '../models/room.js';
 export const createTransfer = async (req, res) => {
   const { patientId, fromRoom, toRoom, reason } = req.body;
   // Validate rooms and patient status (admitted)

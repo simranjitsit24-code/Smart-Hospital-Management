@@ -1,3 +1,6 @@
+import Patient from '../models/Patient.js';
+import Room from '../models/room.js';
+
 export const getDashboardStats = async (req, res) => {
   const totalPatients = await Patient.countDocuments();
   const admitted = await Patient.countDocuments({ status: 'Admitted' });
