@@ -1,6 +1,6 @@
 import Patient from '../models/Patient.js';
-import Room from '../models/Room.js';
-import Transfer from '../models/Transfer.js';
+import Room from '../models/room.js';
+import Transfer from '../models/transfer.js';
 
 // Generate next patient ID
 const generatePatientId = async () => {
@@ -10,6 +10,16 @@ const generatePatientId = async () => {
   return `P${num}`;
 };
 
+// Get a single patient by patientId
+export const getPatientById = async (req, res) => {
+  try {
+    const patient = await Patient.findOne({ patientId: req.params.patientId });
+    if (!patient) return res.status(404).json({ error: 'Patient not found' });
+    res.json(patient);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 // Register new patient (includes room assignment)
 export const registerPatient = async (req, res) => {
   try {

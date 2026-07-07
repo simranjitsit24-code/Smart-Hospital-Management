@@ -12,6 +12,19 @@ export const addRoom = async (req, res) => {
   res.status(201).json(room);
 };
 
+export const updateRoom = async (req, res) => {
+  try {
+    const room = await Room.findOneAndUpdate(
+      { roomNumber: req.params.roomNumber },
+      req.body,
+      { new: true }
+    );
+    if (!room) return res.status(404).json({ error: 'Room not found' });
+    res.json(room);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 // Smart room suggestion
 export const suggestRoom = async (req, res) => {
   const { ward } = req.query;

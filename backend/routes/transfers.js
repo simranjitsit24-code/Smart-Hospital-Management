@@ -1,5 +1,5 @@
 import express from 'express';
-import { createTransfer, getPatientTimeline } from '../controllers/transferController.js';
+import { createTransfer, getPatientTimeline } from '../controllers/transfercontroller.js';
 
 const router = express.Router();
 

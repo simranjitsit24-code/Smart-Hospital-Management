@@ -5,7 +5,7 @@ import {
   getPatientById,
   updatePatient,
   dischargePatient,
-} from '../controllers/patientController.js';
+} from '../controllers/patientcontroller.js';
 
 const router = express.Router();
 
