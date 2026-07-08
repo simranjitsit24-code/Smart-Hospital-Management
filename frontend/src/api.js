@@ -3,7 +3,7 @@ import axios from 'axios';
 const API = axios.create({
   baseURL: import.meta.env.VITE_API_URL || '/api',
 });
-
+console.log(import.meta.env.VITE_API_URL)
 // ─── Patients ─────────────────────────────────────────────
 export const getPatients = (params) => API.get('/patients', { params });
 export const registerPatient = (data) => API.post('/patients', data);
