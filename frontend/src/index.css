@@ -24,3 +24,94 @@
     box-sizing: border-box;
   }
 }
+
+/* ── Print styles ────────────────────────────────────────── */
+@media print {
+  /* Reset page margins */
+  @page {
+    margin: 5mm;
+    size: auto;
+  }
+
+  html,
+  body {
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide everything except the slip */
+  body * {
+    visibility: hidden !important;
+  }
+
+  #slip-print-area,
+  #slip-print-area * {
+    visibility: visible !important;
+  }
+
+  /* Slip container – scale to fit if needed */
+  #slip-print-area {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    padding: 15px !important;
+    margin: 0 auto !important;
+    background: white !important;
+    color: black !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    transform: scale(0.92) !important;        /* 🔹 scale down to fit */
+    transform-origin: top left !important;
+  }
+
+  #slip-print-area * {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Font adjustments */
+  #slip-print-area .text-sm { font-size: 0.7rem !important; }
+  #slip-print-area .text-xs { font-size: 0.55rem !important; }
+  #slip-print-area .text-lg { font-size: 0.95rem !important; }
+  #slip-print-area .text-2xl { font-size: 1.2rem !important; }
+
+  /* Reset dark backgrounds */
+  #slip-print-area .bg-slate-900,
+  #slip-print-area .bg-slate-800,
+  #slip-print-area .bg-white,
+  #slip-print-area .bg-gradient-to-br {
+    background: white !important;
+    color: #1a202c !important;
+  }
+
+  /* Borders */
+  #slip-print-area .border {
+    border-color: #cbd5e1 !important;
+  }
+
+  /* QR code */
+  #slip-print-area .grid.place-items-center {
+    background: white !important;
+  }
+
+  /* Keep grid layout */
+  #slip-print-area .grid {
+    display: grid !important;
+  }
+
+  /* Reduce padding in grid items */
+  #slip-print-area .p-3 {
+    padding: 6px !important;
+  }
+}
