@@ -1,7 +1,7 @@
 Smart Hospital Room Management System
 A full‑stack web application for hospital clerks to manage rooms, beds, patients, transfers, and discharges – with a beautiful dashboard, a 6‑floor × 100‑room grid, QR‑enabled admission slips, and real‑time occupancy statistics.
 
-INTERN ID = CT-3766
+INTERN ID = CITS5354
 
 🚀 Live Demo
 Frontend: https://smart-hospital-management-4.onrender.com
